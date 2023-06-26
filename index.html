@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <title>github.io</title>
+    <script>
+      function handleRequest() {
+        const parameter = new URLSearchParams(window.location.search).get('parameter');
+
+        let responseData = [];
+
+        if (parameter === '2') {
+          responseData = ['data1', 'data2'];
+        } else if (parameter === '22') {
+          responseData = ['data1', 'data2', 'data3', 'data4'];
+        }
+
+        document.body.innerHTML = JSON.stringify(responseData);
+      }
+
+      handleRequest();
+    </script>
 </head>
 <body>
     <div id="container">
